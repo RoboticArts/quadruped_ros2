@@ -1,0 +1,50 @@
+/**:
+  controller_manager:
+    ros__parameters:
+      update_rate: 50  # Hz
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      robot_base_controller:
+        type: quadruped_locomotion_controller/Controller
+
+
+  # joint_state_broadcaster:
+  #   ros__parameters:
+  #     use_local_topics: false
+
+  robot_base_controller:
+    ros__parameters:
+
+      left_front_leg:
+        haa_joint:
+          name: "LF_HAA"
+        hfe_joint:
+          name: "LF_HFE"
+        kfe_joint:
+          name: "LF_KFE"
+
+      left_hind_leg:
+        haa_joint:
+          name: "LH_HAA"
+        hfe_joint:
+          name: "LH_HFE"
+        kfe_joint:
+          name: "LH_KFE"
+
+      right_front_leg:
+        haa_joint:
+          name: "RF_HAA"
+        hfe_joint:
+          name: "RF_HFE"
+        kfe_joint:
+          name: "RF_KFE"
+
+      right_hind_leg:
+        haa_joint:
+          name: "RH_HAA"
+        hfe_joint:
+          name: "RH_HFE"
+        kfe_joint:
+          name: "RH_KFE"
