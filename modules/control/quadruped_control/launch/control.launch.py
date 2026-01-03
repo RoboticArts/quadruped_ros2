@@ -16,7 +16,10 @@ def generate_launch_description():
     ros2_control = Node(
         package="controller_manager",
         executable="ros2_control_node",
-        parameters=[controller_path],
+        parameters=[
+          controller_path,
+          {"use_sim_time": use_sim},
+        ],
         output="both",
     )
 
@@ -27,6 +30,7 @@ def generate_launch_description():
         arguments=[
             "joint_state_broadcaster",
         ],
+        parameters=[{"use_sim_time": use_sim}]
     )
 
     # Run robot_base_controller controller
@@ -35,7 +39,8 @@ def generate_launch_description():
         executable="spawner",
         arguments=[
             "robot_base_controller",
-        ]
+        ],
+        parameters=[{"use_sim_time": use_sim}]
     )
 
     robot_controller_spawner_after_joint_state = RegisterEventHandler(
