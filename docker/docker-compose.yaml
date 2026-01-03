@@ -1,0 +1,19 @@
+services:
+  quadruped-ros2:
+    container_name: quadruped-ros2
+    image: roboticarts/quadruped-ros2:jazzy-latest
+    network_mode: host
+    tty: true
+    stdin_open: true
+    environment:
+      - ROS_DOMAIN_ID=0
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,graphics
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /dev/dri:/dev/dri 
+    command: >
+        ros2 launch quadruped_bringup bringup_complete.launch.py run_rviz:=true

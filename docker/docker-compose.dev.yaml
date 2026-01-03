@@ -1,0 +1,16 @@
+services:
+  quadruped-ros2:
+    extends:
+      file: docker-compose.yaml
+      service: quadruped-ros2
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: quadruped-ros2:build
+    volumes:
+      - ../:/home/robot/ros2_ws/src/quadruped_ros2:rw
+    command: >
+      bash -i -c "
+        source install/setup.bash
+        bash
+      "
