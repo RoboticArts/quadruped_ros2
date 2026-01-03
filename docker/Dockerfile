@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     ros-${ROBOT_DISTRO}-rmw-cyclonedds-cpp && \
     rm -rf /var/lib/apt/lists/*    
 
-# Install Gazebo and transport libraries
+# Install Gazebo transport library
 RUN apt-get update && apt-get install -y curl lsb-release gnupg
 RUN curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg && \
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" \
@@ -29,7 +29,7 @@ RUN curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyri
     libgz-transport15-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install ZeroMQ
+# Install ZeroMQ library
 RUN apt-get update && apt-get install -y \
     libzmq3-dev \
     cppzmq-dev \

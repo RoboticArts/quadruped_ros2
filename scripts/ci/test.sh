@@ -30,7 +30,7 @@ pushd "$WS_ROOT"
 
 # Add packages to test
 packages_list=(
-  nano_atom_integration_tests
+  quadruped_integration_tests
 )
 
 packages_result=()

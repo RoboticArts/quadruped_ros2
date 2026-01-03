@@ -1,6 +1,3 @@
-
-# docker push roboticarts/nano-atom:tagname
-
 #!/bin/bash
 set -e
 
@@ -26,7 +23,7 @@ else
     echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USER" --password-stdin
 fi
 
-repository="${image_reference%%:*}"   # roboticarts/nano-atom
+repository="${image_reference%%:*}"   # roboticarts/quadruped-ros2
 version="${image_reference#*:}"       # prefix-1.0.0
 
 # version="prefix-1.0.0"  → prefix
@@ -37,5 +34,5 @@ fi
 
 docker tag ${image_reference} ${repository}:${prefix}latest
 
-docker push ${image_reference}             # roboticarts/nano-atom:prefix-1.0.0
-docker push ${repository}:${prefix}latest  # roboticarts/nano-atom:prefix-latest
+docker push ${image_reference}             # roboticarts/quadruped-ros2:prefix-1.0.0
+docker push ${repository}:${prefix}latest  # roboticarts/quadruped-ros2:prefix-latest
