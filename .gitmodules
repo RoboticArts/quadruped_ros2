@@ -1,9 +1,9 @@
 [submodule "control/quadruped_locomotion"]
-	path = control/quadruped_locomotion
+	path = modules/control/quadruped_locomotion
 	url = https://github.com/RoboticArts/quadruped_locomotion.git
 [submodule "control/quadruped_locomotion_ros2"]
-	path = control/quadruped_locomotion_ros2
+	path = modules/control/quadruped_locomotion_ros2
 	url = https://github.com/RoboticArts/quadruped_locomotion_ros2.git
 [submodule "description/anymal_description"]
-	path = description/anymal_description
+	path = modules/description/anymal_description
 	url = https://github.com/RoboticArts/anymal_description.git
