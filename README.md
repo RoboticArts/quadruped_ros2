@@ -26,13 +26,19 @@ The architecture is designed to:
 ## 2. Quick start
 *Requirements: Linux/WSL2, Docker v2.x and X11*
 
-Run the simulation in one line!
+
+Run the simulation with a single command:
 
 ```
 wget https://raw.githubusercontent.com/RoboticArts/quadruped_ros2/refs/heads/jazzy/docker/docker-compose.yaml && \
-  xhost +local:root && |
-  docker compose up --pull alway
+  xhost +local:root || true && \
+  docker compose up --pull always
 ```
+
+<p align="center">
+<img src="docs/img/quadruped-docker.gif" alt="alt text" width="700"/>
+</p>
+
 
 **Note**: `xhost` temporarily enables GUI access in the current X11 session (Linux). You can revoke it anytime with `xhost -local:root`. Users on WSL2 can ignore it.
 
@@ -149,9 +155,7 @@ docker exec -it quadruped-ros2 bash
 ## 8. Related repositories
 
 - 🐈 [`quadruped_locomotion`](https://github.com/RoboticArts/quadruped_locomotion): Locomotion control architecture for quadruped robots, independent of ROS and execution backends.
-
 - 🌉 [`quadruped_locomotion_ros2`](https://github.com/RoboticArts/quadruped_locomotion_ros2) ROS 2 integration layer that adapts the quadruped_locomotion architecture into a ros2_control-based controller.
-
 - 🤖 [`anymal_description`](https://github.com/RoboticArts/anymal_description): Reference quadruped robot description adapted within this framework.
 
 ## 9. Acknowledgments
